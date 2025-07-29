@@ -73,68 +73,78 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+    <section id="contact" className="py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            Let's Create <span className="gradient-text">Together</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your next project? Let's discuss how we can work together 
-            to bring your ideas to life.
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
+            Ready to bring your vision to life? I'm here to help you build exceptional digital experiences. 
+            Let's start a conversation about your next project.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-6">
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                    <Mail className="w-4 h-4 text-white" />
+        <div className="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+          {/* Enhanced Contact Information */}
+          <div className="lg:col-span-1 space-y-8 stagger-fade">
+            <Card className="glass-card shadow-soft hover-glow">
+              <CardHeader className="pb-6">
+                <CardTitle className="flex items-center gap-3 text-2xl">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
                   Contact Information
                 </CardTitle>
+                <p className="text-muted-foreground">Let's connect and discuss opportunities</p>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6">
                 {contactInfo.map((info) => (
                   <a
                     key={info.label}
                     href={info.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/10 transition-colors group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-card/30 border border-border/20 hover:bg-card/50 hover:border-primary/30 transition-all duration-300 group"
                   >
-                    <div className="text-primary group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-gradient-card rounded-lg flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
                       {info.icon}
                     </div>
                     <div>
-                      <p className="font-medium">{info.label}</p>
-                      <p className="text-sm text-muted-foreground">{info.value}</p>
+                      <p className="font-semibold text-foreground">{info.label}</p>
+                      <p className="text-muted-foreground">{info.value}</p>
                     </div>
                   </a>
                 ))}
               </CardContent>
             </Card>
 
-            {/* Social Links */}
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle>Connect With Me</CardTitle>
+            {/* Enhanced Social Links */}
+            <Card className="glass-card shadow-soft hover-glow">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl">Connect With Me</CardTitle>
+                <p className="text-muted-foreground">Follow my journey and projects</p>
               </CardHeader>
               <CardContent>
-                <div className="flex gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   {socialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center text-white hover:scale-110 hover:shadow-glow transition-all duration-300"
+                      className="aspect-square bg-gradient-primary rounded-xl flex items-center justify-center text-white hover:scale-110 hover:shadow-glow transition-all duration-300 group"
                       title={social.label}
                     >
-                      {social.icon}
+                      <div className="group-hover:scale-110 transition-transform duration-300">
+                        {social.icon}
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -142,22 +152,23 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* Enhanced Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                    <Send className="w-4 h-4 text-white" />
+            <Card className="glass-card shadow-soft hover-glow">
+              <CardHeader className="pb-8">
+                <CardTitle className="flex items-center gap-3 text-2xl">
+                  <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center shadow-glow">
+                    <Send className="w-6 h-6 text-white" />
                   </div>
                   Send Message
                 </CardTitle>
+                <p className="text-muted-foreground">I'll get back to you within 24 hours</p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      <label htmlFor="name" className="block text-sm font-semibold mb-3 text-foreground">
                         Full Name *
                       </label>
                       <Input
@@ -165,11 +176,11 @@ const Contact = () => {
                         name="name"
                         placeholder="Your full name"
                         required
-                        className="transition-all duration-300 focus:shadow-elegant"
+                        className="h-12 bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold mb-3 text-foreground">
                         Email Address *
                       </label>
                       <Input
@@ -178,52 +189,52 @@ const Contact = () => {
                         type="email"
                         placeholder="your.email@example.com"
                         required
-                        className="transition-all duration-300 focus:shadow-elegant"
+                        className="h-12 bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                    <label htmlFor="subject" className="block text-sm font-semibold mb-3 text-foreground">
                       Subject
                     </label>
                     <Input
                       id="subject"
                       name="subject"
                       placeholder="What's this about?"
-                      className="transition-all duration-300 focus:shadow-elegant"
+                      className="h-12 bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold mb-3 text-foreground">
                       Message *
                     </label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell me about your project or how I can help you..."
+                      placeholder="Tell me about your project, timeline, budget, or any specific requirements..."
                       rows={6}
                       required
-                      className="transition-all duration-300 focus:shadow-elegant resize-none"
+                      className="bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300 resize-none"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    variant="hero" 
-                    size="lg" 
+                    variant="premium" 
+                    size="xl" 
                     disabled={isSubmitting}
-                    className="w-full group"
+                    className="w-full group hover-lift"
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Sending...
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        Sending Message...
                       </>
                     ) : (
                       <>
-                        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                         Send Message
                       </>
                     )}
@@ -234,33 +245,41 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Quick Contact CTA */}
-        <div className="text-center mt-16 p-8 bg-gradient-primary rounded-2xl text-white">
-          <h3 className="text-2xl font-bold mb-2">Ready to Start Your Project?</h3>
-          <p className="mb-6 opacity-90">
-            Let's discuss your requirements and bring your vision to life!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="glassmorphism" 
-              size="lg"
-              asChild
-            >
-              <a href="mailto:b.moutawakil.at@gmail.com">
-                <Mail className="w-4 h-4" />
-                Email Me Directly
-              </a>
-            </Button>
-            <Button 
-              variant="glassmorphism" 
-              size="lg"
-              asChild
-            >
-              <a href="https://wa.me/212680157997" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp Chat
-              </a>
-            </Button>
+        {/* Enhanced Quick Contact CTA */}
+        <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="relative p-12 bg-gradient-primary rounded-3xl text-white shadow-glow overflow-hidden">
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+            <div className="relative z-10 text-center">
+              <h3 className="text-3xl font-bold mb-4">Prefer Direct Communication?</h3>
+              <p className="mb-8 opacity-90 text-lg max-w-2xl mx-auto leading-relaxed">
+                Skip the form and reach out directly. I'm always excited to discuss new projects and opportunities.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Button 
+                  variant="glassmorphism" 
+                  size="xl"
+                  asChild
+                  className="hover-lift"
+                >
+                  <a href="mailto:b.moutawakil.at@gmail.com">
+                    <Mail className="w-5 h-5" />
+                    Email Me Directly
+                  </a>
+                </Button>
+                <Button 
+                  variant="glassmorphism" 
+                  size="xl"
+                  asChild
+                  className="hover-lift"
+                >
+                  <a href="https://wa.me/212680157997" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5" />
+                    WhatsApp Chat
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

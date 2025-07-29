@@ -13,29 +13,51 @@ import {
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
-      icon: <Code className="w-6 h-6" />,
-      skills: ["HTML", "CSS", "JavaScript", "React + Vite", "Bootstrap 5"],
-      color: "from-blue-500 to-cyan-500"
+      title: "Frontend Excellence",
+      icon: <Code className="w-7 h-7" />,
+      gradient: "from-blue-500 to-cyan-500",
+      skills: [
+        { name: "React + TypeScript", level: 92, description: "Modern component architecture" },
+        { name: "Tailwind CSS", level: 88, description: "Utility-first styling" },
+        { name: "JavaScript ES6+", level: 90, description: "Advanced JS concepts" },
+        { name: "HTML5/CSS3", level: 95, description: "Semantic markup & modern CSS" },
+        { name: "Responsive Design", level: 90, description: "Mobile-first approach" },
+      ],
     },
     {
-      title: "Backend",
-      icon: <Server className="w-6 h-6" />,
-      skills: ["Laravel (PHP)", "Java Spring Boot", "Node.js", "Express"],
-      color: "from-green-500 to-emerald-500"
+      title: "Backend Mastery",
+      icon: <Server className="w-7 h-7" />,
+      gradient: "from-emerald-500 to-teal-500",
+      skills: [
+        { name: "Laravel", level: 88, description: "Full-stack PHP framework" },
+        { name: "Spring Boot", level: 82, description: "Enterprise Java development" },
+        { name: "Node.js + Express", level: 78, description: "JavaScript runtime & framework" },
+        { name: "RESTful APIs", level: 90, description: "API design & implementation" },
+        { name: "Authentication", level: 85, description: "Security & session management" },
+      ],
     },
     {
-      title: "Database",
-      icon: <Database className="w-6 h-6" />,
-      skills: ["MySQL", "Database Design", "SQL Queries", "Data Management"],
-      color: "from-purple-500 to-violet-500"
+      title: "Database Engineering",
+      icon: <Database className="w-7 h-7" />,
+      gradient: "from-purple-500 to-pink-500",
+      skills: [
+        { name: "MySQL", level: 90, description: "Advanced queries & optimization" },
+        { name: "Database Design", level: 85, description: "Schema architecture & normalization" },
+        { name: "SQL Optimization", level: 80, description: "Performance tuning" },
+        { name: "Data Modeling", level: 85, description: "Entity relationships" },
+      ],
     },
     {
-      title: "Tools",
-      icon: <Settings className="w-6 h-6" />,
-      skills: ["Git & GitHub", "Postman", "VS Code", "IntelliJ", "Figma"],
-      color: "from-orange-500 to-red-500"
-    }
+      title: "DevOps & Tools",
+      icon: <Settings className="w-7 h-7" />,
+      gradient: "from-orange-500 to-red-500",
+      skills: [
+        { name: "Git & GitHub", level: 90, description: "Version control & collaboration" },
+        { name: "Docker", level: 75, description: "Containerization & deployment" },
+        { name: "Postman", level: 85, description: "API testing & documentation" },
+        { name: "VS Code + IntelliJ", level: 92, description: "Advanced IDE workflows" },
+      ],
+    },
   ];
 
   const languages = [
@@ -45,39 +67,65 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
+    <section id="skills" className="py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            Technical <span className="gradient-text">Expertise</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and the tools I use to bring ideas to life.
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
+            A comprehensive arsenal of modern technologies and tools I use to build exceptional digital experiences.
           </p>
         </div>
 
-        {/* Technical Skills */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* Enhanced Technical Skills */}
+        <div className="grid md:grid-cols-2 gap-8 mb-20 stagger-fade">
           {skillCategories.map((category, index) => (
             <Card 
               key={category.title} 
-              className="shadow-card hover:shadow-elegant transition-all duration-300 group"
+              className="glass-card shadow-soft hover-lift hover-glow group relative overflow-hidden"
             >
-              <CardHeader className="text-center pb-4">
-                <div className={`mx-auto w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform`}>
-                  {category.icon}
+              <div className="absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity duration-500" style={{ background: `linear-gradient(135deg, var(--primary), var(--accent))` }}></div>
+              
+              <CardHeader className="pb-6 relative z-10">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${category.gradient} flex items-center justify-center text-white shadow-glow group-hover:scale-110 transition-transform duration-500`}>
+                    {category.icon}
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl font-bold text-foreground">{category.title}</CardTitle>
+                    <p className="text-muted-foreground text-sm">Specialized expertise</p>
+                  </div>
                 </div>
-                <CardTitle className="text-xl">{category.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
+              
+              <CardContent className="relative z-10">
+                <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div 
-                      key={skill}
-                      className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent/10 transition-colors"
+                      key={skill.name}
+                      className="group/skill p-4 rounded-xl bg-card/30 border border-border/20 hover:bg-card/50 hover:border-primary/30 transition-all duration-300"
                     >
-                      <div className="w-2 h-2 bg-gradient-primary rounded-full"></div>
-                      <span className="text-sm font-medium">{skill}</span>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-semibold text-foreground">{skill.name}</span>
+                        <span className="text-primary font-mono text-sm">{skill.level}%</span>
+                      </div>
+                      <p className="text-muted-foreground text-sm mb-3">{skill.description}</p>
+                      <div className="w-full bg-muted/50 rounded-full h-2 overflow-hidden">
+                        <div 
+                          className="h-2 bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
+                          style={{ 
+                            width: `${skill.level}%`,
+                            animationDelay: `${skillIndex * 0.2}s`
+                          }}
+                        ></div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -87,24 +135,33 @@ const Skills = () => {
         </div>
 
         {/* Languages Section */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="shadow-card">
-            <CardHeader className="text-center">
-              <div className="mx-auto w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white mb-3">
-                <Globe className="w-6 h-6" />
+        <div className="max-w-4xl mx-auto mb-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <Card className="glass-card shadow-soft hover-glow">
+            <CardHeader className="text-center pb-6">
+              <div className="mx-auto w-16 h-16 rounded-xl bg-gradient-accent flex items-center justify-center text-white mb-4 shadow-glow">
+                <Globe className="w-8 h-8" />
               </div>
-              <CardTitle className="text-2xl">Languages</CardTitle>
+              <CardTitle className="text-3xl font-bold">Languages</CardTitle>
+              <p className="text-muted-foreground">Communication across cultures</p>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
-                {languages.map((language) => (
-                  <div key={language.name} className="text-center">
-                    <h4 className="font-semibold text-lg mb-2">{language.name}</h4>
-                    <p className="text-muted-foreground text-sm mb-3">{language.level}</p>
-                    <div className="w-full bg-muted rounded-full h-2">
+              <div className="grid md:grid-cols-3 gap-8">
+                {languages.map((language, index) => (
+                  <div key={language.name} className="text-center group">
+                    <div className="relative mb-4">
+                      <div className="w-20 h-20 mx-auto rounded-full bg-gradient-card border-4 border-primary/20 flex items-center justify-center group-hover:border-primary/50 transition-colors duration-300">
+                        <span className="text-2xl font-bold text-primary">{language.percentage}%</span>
+                      </div>
+                    </div>
+                    <h4 className="font-bold text-xl mb-2 text-foreground">{language.name}</h4>
+                    <p className="text-muted-foreground mb-4">{language.level}</p>
+                    <div className="w-full bg-muted/50 rounded-full h-3 overflow-hidden">
                       <div 
-                        className="bg-gradient-primary h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${language.percentage}%` }}
+                        className="bg-gradient-primary h-3 rounded-full transition-all duration-1000 ease-out"
+                        style={{ 
+                          width: `${language.percentage}%`,
+                          animationDelay: `${index * 0.3}s`
+                        }}
                       ></div>
                     </div>
                   </div>
@@ -114,37 +171,37 @@ const Skills = () => {
           </Card>
         </div>
 
-        {/* Additional Skills Highlights */}
-        <div className="mt-16 grid md:grid-cols-3 gap-6 text-center">
-          <div className="flex flex-col items-center p-6">
-            <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-white mb-4">
-              <Palette className="w-8 h-8" />
+        {/* Enhanced Additional Skills */}
+        <div className="grid md:grid-cols-3 gap-8 stagger-fade">
+          <Card className="glass-card shadow-soft hover-lift hover-glow group text-center p-8">
+            <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center text-white mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
+              <Palette className="w-10 h-10" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">UI/UX Awareness</h3>
-            <p className="text-muted-foreground text-sm">
-              Understanding of user experience principles and modern design patterns
+            <h3 className="font-bold text-xl mb-4 text-foreground">Design Sensibility</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Strong understanding of UI/UX principles, modern design patterns, and user-centered thinking in development.
             </p>
-          </div>
+          </Card>
           
-          <div className="flex flex-col items-center p-6">
-            <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white mb-4">
-              <Coffee className="w-8 h-8" />
+          <Card className="glass-card shadow-soft hover-lift hover-glow group text-center p-8">
+            <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-to-r from-indigo-500 to-blue-500 flex items-center justify-center text-white mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
+              <Coffee className="w-10 h-10" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Problem Solving</h3>
-            <p className="text-muted-foreground text-sm">
-              Analytical thinking and debugging skills to solve complex challenges
+            <h3 className="font-bold text-xl mb-4 text-foreground">Problem Solving</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Advanced analytical thinking, systematic debugging, and creative solution-finding for complex technical challenges.
             </p>
-          </div>
+          </Card>
           
-          <div className="flex flex-col items-center p-6">
-            <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-white mb-4">
-              <Terminal className="w-8 h-8" />
+          <Card className="glass-card shadow-soft hover-lift hover-glow group text-center p-8">
+            <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 flex items-center justify-center text-white mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
+              <Terminal className="w-10 h-10" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Clean Code</h3>
-            <p className="text-muted-foreground text-sm">
-              Writing maintainable, well-documented code following best practices
+            <h3 className="font-bold text-xl mb-4 text-foreground">Code Quality</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Commitment to writing clean, maintainable, well-documented code following industry best practices and standards.
             </p>
-          </div>
+          </Card>
         </div>
       </div>
     </section>

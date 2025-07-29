@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Shield, Users, Database, Code2 } from "lucide-react";
+import { ExternalLink, Github, Shield, Users, Database, Code2, Mail } from "lucide-react";
 import projectImage from "@/assets/project-institution.jpg";
 
 const Projects = () => {
@@ -69,55 +69,69 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
+    <section id="projects" className="py-32 bg-gradient-card relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills in full-stack development, 
-            from concept to deployment.
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
+            Showcasing my expertise in full-stack development through real-world applications, 
+            from innovative concepts to polished deployments.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-8 max-w-5xl mx-auto">
+        <div className="space-y-12 max-w-6xl mx-auto stagger-fade">
           {projects.map((project, index) => (
-            <Card key={project.title} className="shadow-card hover:shadow-elegant transition-all duration-300 overflow-hidden group">
-              <div className={`grid ${index % 2 === 0 ? 'lg:grid-cols-2' : 'lg:grid-cols-2'} gap-0`}>
+            <Card key={project.title} className="glass-card shadow-soft hover-lift hover-glow group overflow-hidden">
+              <div className={`grid lg:grid-cols-2 gap-0`}>
                 {/* Project Image */}
                 <div className={`relative overflow-hidden ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className="absolute inset-0 bg-gradient-primary opacity-10 group-hover:opacity-20 transition-opacity duration-500 z-10"></div>
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-80 lg:h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 left-4">
-                    <Badge className={`${getStatusColor(project.status)} text-white`}>
+                  <div className="absolute top-6 left-6 z-20">
+                    <Badge className={`${getStatusColor(project.status)} text-white shadow-glow px-4 py-2 text-sm font-semibold`}>
                       {project.status}
                     </Badge>
                   </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
                 </div>
 
                 {/* Project Content */}
-                <div className={`p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <CardHeader className="p-0 mb-6">
-                    <CardTitle className="text-2xl mb-3">{project.title}</CardTitle>
-                    <p className="text-muted-foreground leading-relaxed">
+                <div className={`p-10 ${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-50"></div>
+                  
+                  <CardHeader className="p-0 mb-8 relative z-10">
+                    <CardTitle className="text-3xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                      {project.title}
+                    </CardTitle>
+                    <p className="text-muted-foreground leading-relaxed text-lg">
                       {project.description}
                     </p>
                   </CardHeader>
 
-                  <CardContent className="p-0 space-y-6">
+                  <CardContent className="p-0 space-y-8 relative z-10">
                     {/* Tech Stack */}
                     <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
-                        <Code2 className="w-4 h-4 text-primary" />
-                        Tech Stack
+                      <h4 className="font-bold mb-4 flex items-center gap-3 text-lg">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
+                          <Code2 className="w-4 h-4 text-white" />
+                        </div>
+                        Technology Stack
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-3">
                         {project.techStack.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs">
+                          <Badge key={tech} className="bg-card/50 border border-border/20 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors duration-300 px-3 py-1">
                             {tech}
                           </Badge>
                         ))}
@@ -126,32 +140,34 @@ const Projects = () => {
 
                     {/* Key Features */}
                     <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-primary" />
+                      <h4 className="font-bold mb-4 flex items-center gap-3 text-lg">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center">
+                          <Shield className="w-4 h-4 text-white" />
+                        </div>
                         Key Features
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {project.features.slice(0, 4).map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start gap-2 text-sm">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-muted-foreground">{feature}</span>
+                          <li key={featureIndex} className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-gradient-primary rounded-full mt-2.5 flex-shrink-0"></div>
+                            <span className="text-muted-foreground leading-relaxed">{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-4 pt-4">
-                      <Button variant="default" size="sm" asChild>
+                    <div className="flex gap-4 pt-6">
+                      <Button variant="premium" size="lg" asChild className="hover-lift">
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="w-4 h-4" />
-                          GitHub
+                          <Github className="w-5 h-5" />
+                          View Code
                         </a>
                       </Button>
                       {project.status === "Completed" && (
-                        <Button variant="outline" size="sm" asChild>
+                        <Button variant="glassmorphism" size="lg" asChild className="hover-lift">
                           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4" />
+                            <ExternalLink className="w-5 h-5" />
                             Live Demo
                           </a>
                         </Button>
@@ -164,22 +180,41 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <h3 className="text-2xl font-semibold mb-4">Interested in working together?</h3>
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-            I'm always open to discussing new opportunities and exciting projects.
-          </p>
-          <Button 
-            variant="hero" 
-            size="lg"
-            onClick={() => {
-              const element = document.getElementById('contact');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Get In Touch
-          </Button>
+        {/* Enhanced Call to Action */}
+        <div className="text-center mt-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="bg-gradient-primary p-12 rounded-2xl shadow-glow relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold text-white mb-4">Ready to Build Something Amazing?</h3>
+              <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                I'm passionate about turning ideas into reality. Let's collaborate on your next project and create something extraordinary together.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  variant="glassmorphism" 
+                  size="xl"
+                  className="hover-lift"
+                  onClick={() => {
+                    const element = document.getElementById('contact');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  Start a Conversation
+                </Button>
+                <Button 
+                  variant="glassmorphism" 
+                  size="xl"
+                  className="hover-lift"
+                  asChild
+                >
+                  <a href="mailto:b.moutawakil.at@gmail.com">
+                    <Mail className="w-5 h-5" />
+                    Email Me Directly
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

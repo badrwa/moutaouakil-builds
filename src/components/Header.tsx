@@ -32,17 +32,17 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-card"
+          ? "bg-background/80 backdrop-blur-xl shadow-elegant border-b border-border/20"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent cursor-pointer"
+            className="text-2xl font-bold gradient-text cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => scrollToSection("home")}
           >
             Badr Moutaouakil
@@ -54,12 +54,13 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <Button variant="hero" size="sm" className="ml-4">
+            <Button variant="premium" size="sm" className="ml-6">
               <Download className="w-4 h-4" />
               Resume
             </Button>
@@ -69,7 +70,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden hover-glow"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -78,18 +79,21 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border">
-            <div className="flex flex-col space-y-4 pt-4">
-              {navItems.map((item) => (
+          <nav className="md:hidden mt-6 pb-6 border-t border-border/20 animate-slide-up">
+            <div className="flex flex-col space-y-4 pt-6">
+              {navItems.map((item, index) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground hover:text-primary transition-colors font-medium text-left"
+                  className="text-foreground hover:text-primary transition-all duration-300 font-medium text-left group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {item.label}
+                  <span className="inline-block group-hover:translate-x-2 transition-transform duration-300">
+                    {item.label}
+                  </span>
                 </button>
               ))}
-              <Button variant="hero" size="sm" className="w-fit">
+              <Button variant="premium" size="sm" className="w-fit mt-4">
                 <Download className="w-4 h-4" />
                 Resume
               </Button>
