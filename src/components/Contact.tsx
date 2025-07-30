@@ -28,7 +28,6 @@ const Contact = () => {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
       message: formData.get('message') as string,
-      phone: formData.get('subject') as string, // Using subject as phone for now
     };
 
     try {
