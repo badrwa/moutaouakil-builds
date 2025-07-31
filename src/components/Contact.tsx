@@ -97,7 +97,7 @@ const Contact = () => {
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/badrmoutaouakil"
+      href: "https://www.linkedin.com/in/badr-moutaouakil-a2687b25b/"
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
