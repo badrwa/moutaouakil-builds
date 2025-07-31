@@ -36,7 +36,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: new URLSearchParams({
         From: 'whatsapp:+14155238886', // Twilio Sandbox WhatsApp number
-        To: 'whatsapp:+212602669946', // Your WhatsApp number
+        To: 'whatsapp:+212680157997', // Your WhatsApp number
         Body: whatsappMessage,
       }),
     });
