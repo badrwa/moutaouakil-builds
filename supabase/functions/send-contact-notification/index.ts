@@ -35,13 +35,19 @@ const handler = async (req: Request): Promise<Response> => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        From: 'whatsapp:+14155238886', // Twilio Sandbox WhatsApp number
-        To: 'whatsapp:+212680157997', // Your WhatsApp number
+        From: `+${TWILIO_ACCOUNT_SID.slice(2)}`, // Use your Twilio phone number
+        To: '+212680157997', // Your WhatsApp number (without whatsapp: prefix)
         Body: whatsappMessage,
       }),
     });
 
     const whatsappResult = await whatsappResponse.json();
+    
+    if (!whatsappResponse.ok) {
+      console.error("WhatsApp send failed:", whatsappResult);
+      throw new Error(`WhatsApp notification failed: ${whatsappResult.message}`);
+    }
+    
     console.log("WhatsApp sent successfully:", whatsappResult);
 
     return new Response(JSON.stringify({ success: true }), {
