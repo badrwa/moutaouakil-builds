@@ -25,8 +25,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending WhatsApp notification for:", { name, email });
 
-    // Send WhatsApp notification
+    // Send WhatsApp notification via Twilio Sandbox
     const whatsappMessage = `🔔 *New Contact Form Submission*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n\n💬 *Message:*\n${message}`;
+    
+    console.log("Sending WhatsApp to:", 'whatsapp:+212680157997');
+    console.log("Using Twilio Account SID:", TWILIO_ACCOUNT_SID);
     
     const whatsappResponse = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`, {
       method: 'POST',
@@ -35,8 +38,8 @@ const handler = async (req: Request): Promise<Response> => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        From: `+${TWILIO_ACCOUNT_SID.slice(2)}`, // Use your Twilio phone number
-        To: '+212680157997', // Your WhatsApp number (without whatsapp: prefix)
+        From: 'whatsapp:+14155238886', // Twilio Sandbox WhatsApp number
+        To: 'whatsapp:+212680157997', // Your WhatsApp number (must be joined to sandbox)
         Body: whatsappMessage,
       }),
     });
@@ -45,7 +48,8 @@ const handler = async (req: Request): Promise<Response> => {
     
     if (!whatsappResponse.ok) {
       console.error("WhatsApp send failed:", whatsappResult);
-      throw new Error(`WhatsApp notification failed: ${whatsappResult.message}`);
+      console.error("Error details:", JSON.stringify(whatsappResult, null, 2));
+      throw new Error(`WhatsApp notification failed: ${whatsappResult.message || 'Unknown error'}`);
     }
     
     console.log("WhatsApp sent successfully:", whatsappResult);
