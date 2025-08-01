@@ -1,15 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Shield, Users, Database, Code2, Mail } from "lucide-react";
-import projectImage from "@/assets/project-institution.jpg";
+import { ExternalLink, Github, Shield, Users, Database, Code2, Mail, Sparkles } from "lucide-react";
+import institutionImage from "@/assets/project-institution.jpg";
+import ecommerceImage from "@/assets/ecommerce-project.jpg";
+import blogImage from "@/assets/blog-cms-project.jpg";
 
 const Projects = () => {
   const projects = [
     {
       title: "Institution Management System",
       description: "A secure, role-based full-stack web application for managing users in an educational institution. Admins can create, update, view, and soft-delete students, instructors, accountants, and other roles.",
-      image: projectImage,
+      image: institutionImage,
       techStack: ["React", "Vite", "Bootstrap 5", "Spring Boot", "Spring Security", "JPA", "MySQL"],
       features: [
         "Role-based login (admin, student, instructor, etc.)",
@@ -26,7 +28,7 @@ const Projects = () => {
     {
       title: "E-Commerce Platform",
       description: "A modern e-commerce web application with shopping cart functionality, product management, and secure payment integration built with React and Laravel.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
+      image: ecommerceImage,
       techStack: ["React", "Laravel", "MySQL", "Stripe API", "Tailwind CSS"],
       features: [
         "Product catalog with search and filters",
@@ -43,7 +45,7 @@ const Projects = () => {
     {
       title: "Blog CMS",
       description: "A content management system for bloggers with rich text editing, category management, and SEO optimization features built with Node.js and React.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=500&fit=crop",
+      image: blogImage,
       techStack: ["Node.js", "Express", "React", "MongoDB", "JWT", "TinyMCE"],
       features: [
         "Rich text editor for content creation",
@@ -61,10 +63,10 @@ const Projects = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "Completed": return "bg-green-500";
-      case "In Progress": return "bg-blue-500";
-      case "Planned": return "bg-orange-500";
-      default: return "bg-gray-500";
+      case "Completed": return "bg-gradient-to-r from-emerald-500 to-green-500";
+      case "In Progress": return "bg-gradient-to-r from-blue-500 to-indigo-500";
+      case "Planned": return "bg-gradient-to-r from-orange-500 to-amber-500";
+      default: return "bg-gradient-to-r from-gray-500 to-slate-500";
     }
   };
 
@@ -87,32 +89,44 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="space-y-12 max-w-6xl mx-auto stagger-fade">
+        <div className="space-y-16 max-w-7xl mx-auto stagger-fade">
           {projects.map((project, index) => (
-            <Card key={project.title} className="glass-card shadow-soft hover-lift hover-glow group overflow-hidden">
+            <Card key={project.title} className="glass-card shadow-elegant hover-lift hover-glow group overflow-hidden border-0 bg-card/40 backdrop-blur-xl">
               <div className={`grid lg:grid-cols-2 gap-0`}>
                 {/* Project Image */}
                 <div className={`relative overflow-hidden ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="absolute inset-0 bg-gradient-primary opacity-10 group-hover:opacity-20 transition-opacity duration-500 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-primary opacity-10 group-hover:opacity-30 transition-all duration-700 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 group-hover:from-accent/40 group-hover:to-primary/40 transition-all duration-700 z-10"></div>
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-80 lg:h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-6 left-6 z-20">
-                    <Badge className={`${getStatusColor(project.status)} text-white shadow-glow px-4 py-2 text-sm font-semibold`}>
+                    <Badge className={`${getStatusColor(project.status)} text-white shadow-glow px-5 py-2.5 text-sm font-bold rounded-full border-0`}>
+                      <Sparkles className="w-3 h-3 mr-1.5" />
                       {project.status}
                     </Badge>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                  
+                  {/* Floating elements */}
+                  <div className="absolute bottom-6 right-6 z-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      <div className="w-3 h-3 bg-secondary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Project Content */}
-                <div className={`p-10 ${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-50"></div>
+                <div className={`p-12 ${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-accent/8 to-transparent opacity-70"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary opacity-60"></div>
                   
-                  <CardHeader className="p-0 mb-8 relative z-10">
-                    <CardTitle className="text-3xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                  <CardHeader className="p-0 mb-10 relative z-10">
+                    <CardTitle className="text-3xl lg:text-4xl font-bold mb-6 text-foreground group-hover:text-primary transition-colors duration-500 leading-tight">
                       {project.title}
                     </CardTitle>
                     <p className="text-muted-foreground leading-relaxed text-lg">
@@ -120,18 +134,18 @@ const Projects = () => {
                     </p>
                   </CardHeader>
 
-                  <CardContent className="p-0 space-y-8 relative z-10">
+                  <CardContent className="p-0 space-y-10 relative z-10">
                     {/* Tech Stack */}
                     <div>
-                      <h4 className="font-bold mb-4 flex items-center gap-3 text-lg">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
-                          <Code2 className="w-4 h-4 text-white" />
+                      <h4 className="font-bold mb-6 flex items-center gap-3 text-xl">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
+                          <Code2 className="w-5 h-5 text-white" />
                         </div>
                         Technology Stack
                       </h4>
                       <div className="flex flex-wrap gap-3">
                         {project.techStack.map((tech) => (
-                          <Badge key={tech} className="bg-card/50 border border-border/20 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors duration-300 px-3 py-1">
+                          <Badge key={tech} className="bg-card/60 backdrop-blur-sm border border-border/30 text-foreground hover:bg-gradient-primary hover:text-white hover:border-primary/50 transition-all duration-300 px-4 py-2 text-sm font-medium rounded-lg shadow-soft hover:shadow-glow hover:scale-105">
                             {tech}
                           </Badge>
                         ))}
@@ -140,34 +154,34 @@ const Projects = () => {
 
                     {/* Key Features */}
                     <div>
-                      <h4 className="font-bold mb-4 flex items-center gap-3 text-lg">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center">
-                          <Shield className="w-4 h-4 text-white" />
+                      <h4 className="font-bold mb-6 flex items-center gap-3 text-xl">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-accent flex items-center justify-center shadow-glow">
+                          <Shield className="w-5 h-5 text-white" />
                         </div>
                         Key Features
                       </h4>
-                      <ul className="space-y-3">
+                      <ul className="space-y-4">
                         {project.features.slice(0, 4).map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-gradient-primary rounded-full mt-2.5 flex-shrink-0"></div>
-                            <span className="text-muted-foreground leading-relaxed">{feature}</span>
+                          <li key={featureIndex} className="flex items-start gap-4 group/item">
+                            <div className="w-2.5 h-2.5 bg-gradient-primary rounded-full mt-2.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300"></div>
+                            <span className="text-muted-foreground leading-relaxed text-base group-hover/item:text-foreground transition-colors duration-300">{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-4 pt-6">
-                      <Button variant="premium" size="lg" asChild className="hover-lift">
+                    <div className="flex flex-col sm:flex-row gap-4 pt-8">
+                      <Button variant="premium" size="lg" asChild className="hover-lift group/btn">
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="w-5 h-5" />
+                          <Github className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
                           View Code
                         </a>
                       </Button>
                       {project.status === "Completed" && (
-                        <Button variant="glassmorphism" size="lg" asChild className="hover-lift">
+                        <Button variant="glassmorphism" size="lg" asChild className="hover-lift group/btn">
                           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-5 h-5" />
+                            <ExternalLink className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                             Live Demo
                           </a>
                         </Button>
