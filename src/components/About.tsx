@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, MapPin, User, Target } from "lucide-react";
+import { GraduationCap, MapPin, User, Target, Star, Heart, Calendar } from "lucide-react";
 
 const About = () => {
   return (
@@ -23,15 +23,25 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Main Content */}
           <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-center gap-4 text-lg">
-              <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/20">
-                <User className="w-5 h-5 text-primary" />
-                <span className="font-medium">25 years old</span>
-              </div>
-              <div className="flex items-center gap-3 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/20">
-                <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-muted-foreground">Had Soualem, Morocco</span>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Age</h3>
+                  <p className="text-muted-foreground text-lg">21 Years</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Location</h3>
+                  <p className="text-muted-foreground text-lg">Morocco</p>
+                </CardContent>
+              </Card>
             </div>
 
             <p className="text-foreground leading-relaxed text-lg">
