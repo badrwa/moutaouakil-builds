@@ -30,7 +30,7 @@ const About = () => {
                     <Calendar className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">Age</h3>
-                  <p className="text-muted-foreground text-lg">21 Years</p>
+                  <p className="text-muted-foreground text-lg">25 Years</p>
                 </CardContent>
               </Card>
               <Card className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105">
