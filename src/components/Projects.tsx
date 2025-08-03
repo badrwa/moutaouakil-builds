@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ExternalLink, Github, Shield, Users, Database, Code2, Mail, Sparkles, Star, Zap, Layers } from "lucide-react";
-import institutionImage from "@/assets/project-institution.jpg";
-import institutionDashboard from "@/assets/institution-dashboard.jpg";
 import institutionLogin from "@/assets/institution-login.jpg";
+import institutionDashboard from "@/assets/institution-dashboard.jpg";
+import institutionAdminTable from "@/assets/institution-admin-table.jpg";
+import institutionStudentDashboard from "@/assets/institution-student-dashboard.jpg";
+import institutionInstructorDashboard from "@/assets/institution-instructor-dashboard.jpg";
 import ecommerceImage from "@/assets/ecommerce-project.jpg";
 import ecommerceCatalog from "@/assets/ecommerce-catalog.jpg";
 import ecommerceCheckout from "@/assets/ecommerce-checkout.jpg";
@@ -16,23 +18,23 @@ import blogFrontend from "@/assets/blog-frontend.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "Institution Management System",
-      description: "A secure, role-based full-stack web application for managing users in an educational institution. Admins can create, update, view, and soft-delete students, instructors, accountants, and other roles.",
-      images: [institutionImage, institutionDashboard, institutionLogin],
+      title: "Institution Management System (MVP)",
+      description: "A comprehensive, role-based full-stack web application for managing educational institutions. Features dynamic dashboards for administrators, students, and instructors with complete user management capabilities.",
+      images: [institutionLogin, institutionDashboard, institutionAdminTable, institutionStudentDashboard, institutionInstructorDashboard],
       techStack: ["React", "Vite", "Bootstrap 5", "Spring Boot", "Spring Security", "JPA", "MySQL"],
       features: [
-        "Role-based login (admin, student, instructor, etc.)",
-        "Session authentication (Spring Security)",
-        "Dynamic dashboards per role",
-        "CRUD operations for actors",
-        "DTO & DAO-based architecture",
-        "Soft deletion logic"
+        "Role-based authentication & authorization",
+        "Dynamic dashboards for each user role",
+        "Complete CRUD operations for all users",
+        "Admin panel with user management table",
+        "Student dashboard with GPA & attendance tracking",
+        "Instructor panel for student management"
       ],
       githubUrl: "#",
       liveUrl: "#",
-      status: "Completed",
+      status: "MVP",
       icon: Shield,
-      color: "from-emerald-500 to-teal-600"
+      color: "from-blue-500 to-purple-600"
     },
     {
       title: "E-Commerce Platform",
@@ -77,6 +79,7 @@ const Projects = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Completed": return "bg-gradient-to-r from-emerald-500 to-green-500";
+      case "MVP": return "bg-gradient-to-r from-blue-500 to-purple-600";
       case "In Progress": return "bg-gradient-to-r from-blue-500 to-indigo-500";
       case "Planned": return "bg-gradient-to-r from-orange-500 to-amber-500";
       default: return "bg-gradient-to-r from-gray-500 to-slate-500";
