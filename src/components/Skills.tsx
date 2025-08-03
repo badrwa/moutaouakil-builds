@@ -7,13 +7,14 @@ import {
   Globe,
   Palette,
   Coffee,
-  Terminal
+  Terminal,
+  Layers
 } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Excellence",
+      title: "Frontend Development",
       icon: <Code className="w-7 h-7" />,
       gradient: "from-blue-500 to-cyan-500",
       skills: [
@@ -29,7 +30,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Backend Mastery",
+      title: "Backend Development",
       icon: <Server className="w-7 h-7" />,
       gradient: "from-emerald-500 to-teal-500",
       skills: [
@@ -41,7 +42,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Database Engineering",
+      title: "Database Management",
       icon: <Database className="w-7 h-7" />,
       gradient: "from-purple-500 to-pink-500",
       skills: [
@@ -52,7 +53,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "DevOps & Tools",
+      title: "Development Tools",
       icon: <Settings className="w-7 h-7" />,
       gradient: "from-orange-500 to-red-500",
       skills: [
@@ -62,6 +63,30 @@ const Skills = () => {
         { name: "Postman", level: "Intermediate", description: "API testing & documentation" },
         { name: "Swagger", level: "Intermediate", description: "API documentation & testing" },
         { name: "Netlify", level: "Basic", description: "Website deployment & hosting" },
+      ],
+    },
+    {
+      title: "Frameworks & Libraries",
+      icon: <Layers className="w-7 h-7" />,
+      gradient: "from-violet-500 to-purple-500",
+      skills: [
+        { name: "React Ecosystem", level: "Advanced", description: "Components, hooks, context" },
+        { name: "Spring Framework", level: "Advanced", description: "Dependency injection, AOP" },
+        { name: "Bootstrap", level: "Intermediate", description: "CSS framework for responsive design" },
+        { name: "jQuery", level: "Basic", description: "DOM manipulation & AJAX" },
+        { name: "Tailwind CSS", level: "Basic", description: "Utility-first CSS framework" },
+      ],
+    },
+    {
+      title: "Architecture Patterns",
+      icon: <Terminal className="w-7 h-7" />,
+      gradient: "from-indigo-500 to-blue-500",
+      skills: [
+        { name: "MVC Pattern", level: "Advanced", description: "Model-View-Controller architecture" },
+        { name: "DAO Pattern", level: "Advanced", description: "Data Access Object design pattern" },
+        { name: "REST Architecture", level: "Intermediate", description: "RESTful API design principles" },
+        { name: "Component Architecture", level: "Intermediate", description: "Modular frontend design" },
+        { name: "Service Layer", level: "Basic", description: "Business logic separation" },
       ],
     },
   ];
