@@ -17,11 +17,15 @@ const Skills = () => {
       icon: <Code className="w-7 h-7" />,
       gradient: "from-blue-500 to-cyan-500",
       skills: [
-        { name: "React + TypeScript", level: 92, description: "Modern component architecture" },
-        { name: "Tailwind CSS", level: 88, description: "Utility-first styling" },
-        { name: "JavaScript ES6+", level: 90, description: "Advanced JS concepts" },
-        { name: "HTML5/CSS3", level: 95, description: "Semantic markup & modern CSS" },
-        { name: "Responsive Design", level: 90, description: "Mobile-first approach" },
+        { name: "React + Vite", level: "Advanced", description: "Modern component architecture" },
+        { name: "JavaScript ES6+", level: "Advanced", description: "Advanced JS concepts" },
+        { name: "HTML5/CSS3", level: "Advanced", description: "Semantic markup & modern CSS" },
+        { name: "TypeScript", level: "Basic", description: "Type-safe development" },
+        { name: "PHP", level: "Basic", description: "Server-side scripting" },
+        { name: "Dart", level: "Intermediate", description: "Flutter development language" },
+        { name: "Flutter", level: "Intermediate", description: "Cross-platform mobile development" },
+        { name: "Tailwind CSS", level: "Basic", description: "Utility-first styling" },
+        { name: "Responsive Design", level: "Basic", description: "Mobile-first approach" },
       ],
     },
     {
@@ -29,11 +33,11 @@ const Skills = () => {
       icon: <Server className="w-7 h-7" />,
       gradient: "from-emerald-500 to-teal-500",
       skills: [
-        { name: "Laravel", level: 88, description: "Full-stack PHP framework" },
-        { name: "Spring Boot", level: 82, description: "Enterprise Java development" },
-        { name: "Node.js + Express", level: 78, description: "JavaScript runtime & framework" },
-        { name: "RESTful APIs", level: 90, description: "API design & implementation" },
-        { name: "Authentication", level: 85, description: "Security & session management" },
+        { name: "Laravel", level: "Advanced", description: "Full-stack PHP framework" },
+        { name: "Spring Boot", level: "Advanced", description: "Enterprise Java development" },
+        { name: "REST APIs", level: "Intermediate", description: "API design & implementation" },
+        { name: "Node.js + Express", level: "Basic", description: "JavaScript runtime & framework" },
+        { name: "Authentication", level: "Basic", description: "Security & session management" },
       ],
     },
     {
@@ -41,10 +45,10 @@ const Skills = () => {
       icon: <Database className="w-7 h-7" />,
       gradient: "from-purple-500 to-pink-500",
       skills: [
-        { name: "MySQL", level: 90, description: "Advanced queries & optimization" },
-        { name: "Database Design", level: 85, description: "Schema architecture & normalization" },
-        { name: "SQL Optimization", level: 80, description: "Performance tuning" },
-        { name: "Data Modeling", level: 85, description: "Entity relationships" },
+        { name: "MySQL", level: "Advanced", description: "Advanced queries & optimization" },
+        { name: "Database Design", level: "Intermediate", description: "Schema architecture & normalization" },
+        { name: "Data Modeling", level: "Intermediate", description: "Entity relationships" },
+        { name: "SQL Optimization", level: "Basic", description: "Performance tuning" },
       ],
     },
     {
@@ -52,10 +56,12 @@ const Skills = () => {
       icon: <Settings className="w-7 h-7" />,
       gradient: "from-orange-500 to-red-500",
       skills: [
-        { name: "Git & GitHub", level: 90, description: "Version control & collaboration" },
-        { name: "Docker", level: 75, description: "Containerization & deployment" },
-        { name: "Postman", level: 85, description: "API testing & documentation" },
-        { name: "VS Code + IntelliJ", level: 92, description: "Advanced IDE workflows" },
+        { name: "VS Code", level: "Advanced", description: "Advanced IDE workflows" },
+        { name: "Spring Tool Suite", level: "Advanced", description: "Spring development environment" },
+        { name: "Git & GitHub", level: "Intermediate", description: "Version control & collaboration" },
+        { name: "Postman", level: "Intermediate", description: "API testing & documentation" },
+        { name: "Swagger", level: "Intermediate", description: "API documentation & testing" },
+        { name: "Netlify", level: "Basic", description: "Website deployment & hosting" },
       ],
     },
   ];
@@ -114,14 +120,22 @@ const Skills = () => {
                     >
                       <div className="flex items-center justify-between mb-2">
                         <span className="font-semibold text-foreground">{skill.name}</span>
-                        <span className="text-primary font-mono text-sm">{skill.level}%</span>
+                        <span className={`font-mono text-sm px-2 py-1 rounded-md ${
+                          skill.level === 'Advanced' ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200' :
+                          skill.level === 'Intermediate' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' :
+                          'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200'
+                        }`}>{skill.level}</span>
                       </div>
                       <p className="text-muted-foreground text-sm mb-3">{skill.description}</p>
                       <div className="w-full bg-muted/50 rounded-full h-2 overflow-hidden">
                         <div 
-                          className="h-2 bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
+                          className={`h-2 rounded-full transition-all duration-1000 ease-out ${
+                            skill.level === 'Advanced' ? 'bg-gradient-to-r from-emerald-500 to-green-500' :
+                            skill.level === 'Intermediate' ? 'bg-gradient-to-r from-blue-500 to-indigo-500' :
+                            'bg-gradient-to-r from-gray-400 to-gray-500'
+                          }`}
                           style={{ 
-                            width: `${skill.level}%`,
+                            width: skill.level === 'Advanced' ? '100%' : skill.level === 'Intermediate' ? '75%' : '50%',
                             animationDelay: `${skillIndex * 0.2}s`
                           }}
                         ></div>

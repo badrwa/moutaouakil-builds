@@ -35,44 +35,6 @@ const Projects = () => {
       status: "MVP",
       icon: Shield,
       color: "from-blue-500 to-purple-600"
-    },
-    {
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce web application with shopping cart functionality, product management, and secure payment integration built with React and Laravel.",
-      images: [ecommerceImage, ecommerceCatalog, ecommerceCheckout],
-      techStack: ["React", "Laravel", "MySQL", "Stripe API", "Tailwind CSS"],
-      features: [
-        "Product catalog with search and filters",
-        "Shopping cart and checkout process",
-        "User authentication and profiles",
-        "Admin dashboard for product management",
-        "Payment integration with Stripe",
-        "Order tracking and history"
-      ],
-      githubUrl: "#",
-      liveUrl: "#",
-      status: "In Progress",
-      icon: Zap,
-      color: "from-blue-500 to-purple-600"
-    },
-    {
-      title: "Blog CMS",
-      description: "A content management system for bloggers with rich text editing, category management, and SEO optimization features built with Node.js and React.",
-      images: [blogImage, blogEditor, blogFrontend],
-      techStack: ["Node.js", "Express", "React", "MongoDB", "JWT", "TinyMCE"],
-      features: [
-        "Rich text editor for content creation",
-        "Category and tag management",
-        "SEO optimization tools",
-        "Comment system with moderation",
-        "User roles and permissions",
-        "Responsive design"
-      ],
-      githubUrl: "#",
-      liveUrl: "#",
-      status: "Planned",
-      icon: Layers,
-      color: "from-orange-500 to-red-500"
     }
   ];
 
