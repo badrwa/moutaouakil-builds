@@ -10,8 +10,11 @@ import {
   Terminal,
   Layers
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Skills = () => {
+  const { t } = useLanguage();
+  
   const skillCategories = [
     {
       title: "Frontend Development",
@@ -107,10 +110,10 @@ const Skills = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Technical <span className="gradient-text">Expertise</span>
+            {t('skills.title')}
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-            A comprehensive arsenal of modern technologies and tools I use to build exceptional digital experiences.
+            {t('skills.subtitle')}
           </p>
         </div>
 

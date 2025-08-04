@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, MapPin, User, Target, Star, Heart, Calendar } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="about" className="py-32 bg-gradient-card relative overflow-hidden">
       {/* Background Elements */}
@@ -13,10 +16,10 @@ const About = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            About <span className="gradient-text">Me</span>
+            {t('about.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-            Discover my journey, passion, and dedication to crafting exceptional digital experiences.
+            {t('about.subtitle')}
           </p>
         </div>
 
@@ -29,7 +32,7 @@ const About = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Calendar className="w-6 h-6 text-primary" />
                   </div>
-                   <h3 className="font-semibold text-foreground mb-2">Age</h3>
+                   <h3 className="font-semibold text-foreground mb-2">{t('about.age')}</h3>
                   <p className="text-muted-foreground text-lg">24 Years</p>
                 </CardContent>
               </Card>
@@ -38,23 +41,23 @@ const About = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
-                   <h3 className="font-semibold text-foreground mb-2">Location</h3>
+                   <h3 className="font-semibold text-foreground mb-2">{t('about.location')}</h3>
                   <p className="text-muted-foreground text-lg">Had Soualem, Morocco</p>
                 </CardContent>
               </Card>
             </div>
 
             <p className="text-foreground leading-relaxed text-lg">
-              I'm a passionate full-stack developer from Morocco, driven by an insatiable curiosity for technology and its potential to solve complex problems. My journey began with simple curiosity but has evolved into a deep commitment to crafting <span className="text-primary font-semibold">exceptional digital experiences</span>.
+              {t('about.description1')}
             </p>
 
             <p className="text-foreground leading-relaxed text-lg">
-              What truly excites me is the intersection of <span className="text-accent font-semibold">creativity and logic</span> – transforming abstract ideas into tangible, impactful applications. I thrive on challenges that push me to learn new technologies and implement innovative solutions.
+              {t('about.description2')}
             </p>
 
             <div className="bg-gradient-card p-6 rounded-xl border border-border/20 shadow-soft">
               <p className="text-foreground leading-relaxed text-lg">
-                I'm actively seeking a <strong className="gradient-text">Junior Full Stack Developer</strong> role where I can contribute to meaningful projects, collaborate with talented teams, and continue my growth in a dynamic environment.
+                {t('about.seeking')}
               </p>
             </div>
           </div>

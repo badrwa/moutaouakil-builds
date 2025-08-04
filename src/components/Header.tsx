@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Download } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -23,11 +25,11 @@ const Header = () => {
   };
 
   const navItems = [
-    { label: "Home", id: "home" },
-    { label: "About", id: "about" },
-    { label: "Skills", id: "skills" },
-    { label: "Projects", id: "projects" },
-    { label: "Contact", id: "contact" },
+    { label: t('nav.home'), id: "home" },
+    { label: t('nav.about'), id: "about" },
+    { label: t('nav.skills'), id: "skills" },
+    { label: t('nav.projects'), id: "projects" },
+    { label: t('nav.contact'), id: "contact" },
   ];
 
   return (
@@ -45,7 +47,7 @@ const Header = () => {
             className="text-2xl font-bold gradient-text cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => scrollToSection("home")}
           >
-            My Portfolio
+            {t('nav.portfolio')}
           </div>
 
           {/* Desktop Navigation */}
@@ -62,7 +64,7 @@ const Header = () => {
             ))}
             <Button variant="premium" size="sm" className="ml-6">
               <Download className="w-4 h-4" />
-              Resume
+              {t('nav.resume')}
             </Button>
           </nav>
 
@@ -95,7 +97,7 @@ const Header = () => {
               ))}
               <Button variant="premium" size="sm" className="w-fit mt-4">
                 <Download className="w-4 h-4" />
-                Resume
+                {t('nav.resume')}
               </Button>
             </div>
           </nav>

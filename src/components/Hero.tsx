@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Code, Sparkles, Star, Zap, Trophy, GraduationCap, Briefcase, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-bg.jpg";
 import profilePhoto from "/lovable-uploads/4a5a130e-84f6-44fb-a610-2c9aea1c6ba1.png";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -77,7 +80,7 @@ const Hero = () => {
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full backdrop-blur-sm border border-primary/30 shadow-soft">
                   <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                  <span className="text-sm font-semibold tracking-wider text-primary">AVAILABLE FOR OPPORTUNITIES</span>
+                  <span className="text-sm font-semibold tracking-wider text-primary">{t('hero.status')}</span>
                   <Heart className="w-4 h-4 text-accent animate-pulse" />
                 </div>
               </div>
@@ -89,27 +92,24 @@ const Hero = () => {
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-full">
                   <Sparkles className="w-5 h-5 text-accent animate-spin" style={{ animationDuration: '3s' }} />
-                  <span className="text-sm font-semibold tracking-wider text-accent">HELLO, I'M</span>
+                  <span className="text-sm font-semibold tracking-wider text-accent">{t('hero.greeting')}</span>
                 </div>
 
                 {/* Name */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none tracking-tight">
-                  <span className="block text-foreground">Badr</span>
-                  <span className="block gradient-text">Moutaouakil</span>
+                  <span className="block text-foreground">{t('hero.name.first')}</span>
+                  <span className="block gradient-text">{t('hero.name.last')}</span>
                 </h1>
 
                 {/* Title */}
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-muted-foreground leading-tight">
-                  Elite <span className="text-primary">Full-Stack</span> Developer
+                  {t('hero.title')}
                 </h2>
               </div>
 
               {/* Description */}
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Passionate about crafting exceptional digital experiences with cutting-edge technologies. 
-                Specializing in <span className="text-primary font-semibold">Laravel</span>, {" "}
-                <span className="text-accent font-semibold">React</span>, and {" "}
-                <span className="text-secondary font-semibold">Spring Boot</span>.
+                {t('hero.description')}
               </p>
 
               {/* Tech Stack Icons */}
@@ -143,7 +143,7 @@ const Hero = () => {
                   className="group shadow-glow hover:shadow-elegant transform hover:scale-105"
                 >
                   <Star className="w-6 h-6 mr-2 group-hover:rotate-180 transition-transform duration-500" />
-                  Explore My Work
+                  {t('hero.cta.work')}
                 </Button>
                 
                 <Button 
@@ -153,7 +153,7 @@ const Hero = () => {
                   className="group border-2 border-primary/30 hover:border-primary hover:bg-primary/10 backdrop-blur-sm shadow-soft hover:shadow-elegant"
                 >
                   <Sparkles className="w-6 h-6 mr-2 group-hover:scale-125 transition-transform duration-300" />
-                  Let's Connect
+                  {t('hero.cta.connect')}
                 </Button>
               </div>
             </div>
@@ -163,7 +163,7 @@ const Hero = () => {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center gap-2 text-muted-foreground group cursor-pointer" onClick={() => scrollToSection('about')}>
-            <span className="text-xs font-medium tracking-widest uppercase group-hover:text-primary transition-colors duration-300">Discover More</span>
+            <span className="text-xs font-medium tracking-widest uppercase group-hover:text-primary transition-colors duration-300">{t('hero.scroll')}</span>
             <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent"></div>
             <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
           </div>
