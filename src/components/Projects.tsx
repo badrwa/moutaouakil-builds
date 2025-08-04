@@ -100,7 +100,7 @@ const Projects = () => {
               <div key={project.title} className="group relative">
                 {/* Project Card */}
                 <Card className="overflow-hidden border-0 bg-gradient-to-br from-card/60 via-card/40 to-card/20 backdrop-blur-xl shadow-2xl hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] hover:rotate-1">
-                  <div className={`grid lg:grid-cols-12 gap-0 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                  <div className={`grid sm:grid-cols-1 lg:grid-cols-12 gap-0 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
                     
                     {/* Image Carousel Section */}
                     <div className={`lg:col-span-7 relative ${!isEven ? 'lg:col-start-6' : ''}`}>
@@ -118,7 +118,7 @@ const Projects = () => {
                           <CarouselContent>
                             {project.images.map((image, imgIndex) => (
                               <CarouselItem key={imgIndex}>
-                                <div className="relative h-80 lg:h-96 overflow-hidden">
+                                <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[28rem] overflow-hidden">
                                   <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-20 mix-blend-multiply z-10`}></div>
                                   <img 
                                     src={image} 
@@ -144,7 +144,7 @@ const Projects = () => {
                     </div>
 
                     {/* Content Section */}
-                    <div className={`lg:col-span-5 p-12 lg:p-16 space-y-8 ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className={`lg:col-span-5 p-8 sm:p-12 lg:p-16 xl:p-20 space-y-6 lg:space-y-8 ${!isEven ? 'lg:col-start-1' : ''}`}>
                       {/* Title & Description */}
                       <div className="space-y-6">
                         <div className="flex items-center gap-4 mb-4">
@@ -154,7 +154,7 @@ const Projects = () => {
                           <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent"></div>
                         </div>
                         
-                        <h3 className="text-4xl lg:text-5xl font-black text-foreground leading-tight group-hover:text-primary transition-colors duration-500">
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-foreground leading-tight group-hover:text-primary transition-colors duration-500">
                           {project.title}
                         </h3>
                         

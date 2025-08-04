@@ -48,13 +48,13 @@ const Hero = () => {
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:gap-20 gap-16 items-center">
             
             {/* Left Side - Profile & Intro */}
             <div className="space-y-8 animate-fade-in-up text-center lg:text-left">
               {/* Profile Photo */}
               <div className="relative mx-auto lg:mx-0 w-fit">
-                <div className="relative w-64 h-64 md:w-80 md:h-80">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-96 xl:h-96">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full p-2 animate-glow">
                     <div className="w-full h-full bg-background rounded-full p-2">
                       <img 
@@ -93,13 +93,13 @@ const Hero = () => {
                 </div>
 
                 {/* Name */}
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none tracking-tight">
                   <span className="block text-foreground">Badr</span>
                   <span className="block gradient-text">Moutaouakil</span>
                 </h1>
 
                 {/* Title */}
-                <h2 className="text-2xl md:text-4xl font-bold text-muted-foreground leading-tight">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-muted-foreground leading-tight">
                   Elite <span className="text-primary">Full-Stack</span> Developer
                 </h2>
               </div>

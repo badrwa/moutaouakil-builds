@@ -93,8 +93,7 @@ const Skills = () => {
 
   const languages = [
     { name: "Arabic", level: "Native", percentage: 100 },
-    { name: "English", level: "Working Proficiency", percentage: 75 },
-    { name: "French", level: "Basic", percentage: 30 }
+    { name: "English", level: "Working Proficiency", percentage: 75 }
   ];
 
   return (
@@ -116,7 +115,7 @@ const Skills = () => {
         </div>
 
         {/* Enhanced Technical Skills */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20 stagger-fade">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20 stagger-fade">
           {skillCategories.map((category, index) => (
             <Card 
               key={category.title} 
@@ -184,7 +183,7 @@ const Skills = () => {
               <p className="text-muted-foreground">Communication across cultures</p>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
                 {languages.map((language, index) => (
                   <div key={language.name} className="text-center group">
                     <div className="relative mb-4">
@@ -211,7 +210,7 @@ const Skills = () => {
         </div>
 
         {/* Enhanced Additional Skills */}
-        <div className="grid md:grid-cols-3 gap-8 stagger-fade">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-fade">
           <Card className="glass-card shadow-soft hover-lift hover-glow group text-center p-8">
             <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center text-white mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
               <Palette className="w-10 h-10" />
