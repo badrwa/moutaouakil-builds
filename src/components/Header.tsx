@@ -45,7 +45,7 @@ const Header = () => {
             className="text-2xl font-bold gradient-text cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => scrollToSection("home")}
           >
-            Badr Moutaouakil
+            My Portfolio
           </div>
 
           {/* Desktop Navigation */}

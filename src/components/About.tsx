@@ -29,8 +29,8 @@ const About = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Calendar className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">Age</h3>
-                  <p className="text-muted-foreground text-lg">25 Years</p>
+                   <h3 className="font-semibold text-foreground mb-2">Age</h3>
+                  <p className="text-muted-foreground text-lg">24 Years</p>
                 </CardContent>
               </Card>
               <Card className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105">
@@ -38,8 +38,8 @@ const About = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                  <p className="text-muted-foreground text-lg">Morocco</p>
+                   <h3 className="font-semibold text-foreground mb-2">Location</h3>
+                  <p className="text-muted-foreground text-lg">Had Soualem, Morocco</p>
                 </CardContent>
               </Card>
             </div>

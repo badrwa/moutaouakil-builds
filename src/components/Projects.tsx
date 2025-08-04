@@ -21,13 +21,13 @@ const Projects = () => {
       title: "Institution Management System (MVP)",
       description: "A comprehensive, role-based full-stack web application for managing educational institutions. Features dynamic dashboards for administrators, students, and instructors with complete user management capabilities.",
       images: [
-        "public/lovable-uploads/69397aa9-955f-484f-a07f-6f6f44171d8f.png", // Login
-        "public/lovable-uploads/34fd681a-1201-4195-a2cc-be2d16bb8792.png", // Admin Management
-        "public/lovable-uploads/752b14ad-eedb-4973-b3b1-6bbcdcb413d8.png", // Admin Details
-        "public/lovable-uploads/c793d6ef-69a7-493a-bf14-e8dd0e6ee19e.png", // Admin Edit
-        "public/lovable-uploads/63935396-3134-4336-b76b-6ce2385ba76a.png", // Main Dashboard
-        "public/lovable-uploads/1e541d98-ec6e-4044-af9f-95778fedd344.png", // Student Dashboard
-        "public/lovable-uploads/e4552096-3a24-4073-995d-8462561e7720.png", // Instructor Dashboard
+        "/lovable-uploads/69397aa9-955f-484f-a07f-6f6f44171d8f.png", // Login
+        "/lovable-uploads/34fd681a-1201-4195-a2cc-be2d16bb8792.png", // Admin Management
+        "/lovable-uploads/752b14ad-eedb-4973-b3b1-6bbcdcb413d8.png", // Admin Details
+        "/lovable-uploads/c793d6ef-69a7-493a-bf14-e8dd0e6ee19e.png", // Admin Edit
+        "/lovable-uploads/63935396-3134-4336-b76b-6ce2385ba76a.png", // Main Dashboard
+        "/lovable-uploads/1e541d98-ec6e-4044-af9f-95778fedd344.png", // Student Dashboard
+        "/lovable-uploads/e4552096-3a24-4073-995d-8462561e7720.png", // Instructor Dashboard
       ],
       techStack: ["React", "Vite", "Bootstrap 5", "Spring Boot", "Spring Security", "JPA", "MySQL"],
       features: [
