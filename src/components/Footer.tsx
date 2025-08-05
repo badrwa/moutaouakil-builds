@@ -1,7 +1,9 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-background border-t border-border/20 py-16 relative overflow-hidden">
@@ -19,10 +21,10 @@ const Footer = () => {
               Badr Moutaouakil
             </h3>
             <p className="text-muted-foreground text-lg mb-4">
-              Full-Stack Web Developer
+              {t('hero.title')}
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Crafting exceptional digital experiences with passion and precision.
+              {t('footer.description')}
             </p>
           </div>
 
@@ -74,9 +76,7 @@ const Footer = () => {
         {/* Enhanced Bottom Section */}
         <div className="border-t border-border/20 pt-8 text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-3 text-sm">
-            © {currentYear} Badr Moutaouakil. Crafted with 
-            <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-            from Morocco 🇲🇦
+            {t('footer.copyright')}
           </p>
           <p className="text-muted-foreground text-xs mt-2 opacity-75">
             Available for freelance projects and full-time opportunities

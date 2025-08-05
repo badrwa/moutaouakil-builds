@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   Mail, 
   Phone, 
@@ -18,6 +19,7 @@ import {
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -117,11 +119,10 @@ const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Let's Create <span className="gradient-text">Together</span>
+            {t('contact.title')}
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-            Ready to bring your vision to life? I'm here to help you build exceptional digital experiences. 
-            Let's start a conversation about your next project.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -134,9 +135,9 @@ const Contact = () => {
                   <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
-                  Contact Information
+                  {t('contact.info.title')}
                 </CardTitle>
-                <p className="text-muted-foreground">Let's connect and discuss opportunities</p>
+                <p className="text-muted-foreground">{t('contact.info.subtitle')}</p>
               </CardHeader>
               <CardContent className="space-y-6">
                 {contactInfo.map((info) => (
@@ -203,25 +204,25 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold mb-3 text-foreground">
-                        Full Name *
+                        {t('contact.name')} *
                       </label>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="Your full name"
+                        placeholder={t('contact.name')}
                         required
                         className="h-12 bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300"
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-semibold mb-3 text-foreground">
-                        Email Address *
+                        {t('contact.email')} *
                       </label>
                       <Input
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="your.email@example.com"
+                        placeholder={t('contact.email')}
                         required
                         className="h-12 bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300"
                       />
@@ -230,24 +231,24 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-semibold mb-3 text-foreground">
-                      Subject
+                      {t('contact.subject')}
                     </label>
                     <Input
                       id="subject"
                       name="subject"
-                      placeholder="What's this about?"
+                      placeholder={t('contact.subject')}
                       className="h-12 bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300"
                     />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold mb-3 text-foreground">
-                      Message *
+                      {t('contact.message')} *
                     </label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell me about your project, timeline, budget, or any specific requirements..."
+                      placeholder={t('contact.message')}
                       rows={6}
                       required
                       className="bg-card/50 border-border/20 focus:border-primary/50 focus:shadow-glow transition-all duration-300 resize-none"
@@ -269,7 +270,7 @@ const Contact = () => {
                     ) : (
                       <>
                         <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        Send Message
+                        {t('contact.send')}
                       </>
                     )}
                   </Button>

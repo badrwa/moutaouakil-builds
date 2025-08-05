@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ExternalLink, Github, Shield, Users, Database, Code2, Mail, Sparkles, Star, Zap, Layers } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import institutionLogin from "@/assets/institution-login.jpg";
 import institutionDashboard from "@/assets/institution-dashboard.jpg";
 import institutionAdminTable from "@/assets/institution-admin-table.jpg";
@@ -16,6 +17,7 @@ import blogEditor from "@/assets/blog-editor.jpg";
 import blogFrontend from "@/assets/blog-frontend.jpg";
 
 const Projects = () => {
+  const { t } = useLanguage();
   const projects = [
     {
       title: "Institution Management System (MVP)",
@@ -82,11 +84,11 @@ const Projects = () => {
           </div>
           
           <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Creative <span className="gradient-text bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Projects</span>
+            {t('projects.title')}
           </h2>
           
           <p className="text-muted-foreground max-w-4xl mx-auto text-xl leading-relaxed">
-            Transforming innovative ideas into stunning digital experiences. Each project represents a unique challenge solved with cutting-edge technology and creative design.
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -204,7 +206,7 @@ const Projects = () => {
                         >
                           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                             <Github className="w-5 h-5 mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
-                            View Code
+                            {t('projects.view')}
                           </a>
                         </Button>
                         {project.status === "Completed" && (
@@ -216,7 +218,7 @@ const Projects = () => {
                           >
                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="w-5 h-5 mr-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
-                              Live Demo
+                              {t('projects.demo')}
                             </a>
                           </Button>
                         )}
