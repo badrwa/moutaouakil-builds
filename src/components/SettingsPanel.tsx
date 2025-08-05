@@ -40,62 +40,22 @@ const SettingsPanel = () => {
 
   const languages: { value: Language; label: string; flag: string }[] = [
     { value: 'en', label: 'English', flag: '🇺🇸' },
-    { value: 'ar', label: 'العربية', flag: '🇲🇦' },
+    { value: 'fr', label: 'Français', flag: '🇫🇷' },
   ];
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <div className="fixed top-6 right-6 z-50 group">
-          {/* Outer Ring with Rotating Border */}
-          <div className="absolute inset-0 w-14 h-14 rounded-full bg-gradient-to-r from-primary via-accent to-secondary animate-spin" 
-               style={{ animationDuration: '8s' }} />
-          
-          {/* Middle Ring */}
-          <div className="absolute inset-[2px] w-[calc(3.5rem-4px)] h-[calc(3.5rem-4px)] rounded-full bg-gradient-to-br from-background/95 to-card/90 backdrop-blur-xl" />
-          
-          {/* Inner Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className={`
-              relative w-12 h-12 rounded-full m-1
-              bg-gradient-to-br from-card/60 to-background/40 backdrop-blur-sm
-              border-0 shadow-lg hover:shadow-xl
-              transition-all duration-500 group-hover:scale-110
-              ${isAnimated ? 'animate-bounce' : ''}
-              overflow-hidden
-            `}
-          >
-            {/* Floating Orbs */}
-            <div className="absolute inset-0 overflow-hidden rounded-full">
-              <div className="absolute top-1 right-2 w-1.5 h-1.5 bg-primary/80 rounded-full animate-ping" 
-                   style={{ animationDelay: '0s', animationDuration: '3s' }} />
-              <div className="absolute bottom-2 left-1 w-1 h-1 bg-accent/80 rounded-full animate-ping" 
-                   style={{ animationDelay: '1.5s', animationDuration: '3s' }} />
-              <div className="absolute top-3 left-3 w-0.5 h-0.5 bg-secondary/80 rounded-full animate-ping" 
-                   style={{ animationDelay: '0.8s', animationDuration: '3s' }} />
-            </div>
-            
-            {/* Central Icon */}
-            <div className="relative z-10 flex items-center justify-center">
-              <Settings className="w-5 h-5 text-foreground group-hover:text-primary group-hover:rotate-90 transition-all duration-700" />
-            </div>
-            
-            {/* Inner Glow */}
-            <div className="absolute inset-0 rounded-full bg-gradient-radial from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </Button>
-          
-          {/* Floating Particles */}
-          <div className="absolute -inset-4 pointer-events-none">
-            <div className="absolute top-0 left-1/2 w-1 h-1 bg-primary/60 rounded-full animate-float" 
-                 style={{ animationDelay: '0s', animationDuration: '4s' }} />
-            <div className="absolute bottom-0 right-0 w-0.5 h-0.5 bg-accent/60 rounded-full animate-float" 
-                 style={{ animationDelay: '2s', animationDuration: '5s' }} />
-            <div className="absolute left-0 top-1/2 w-0.5 h-0.5 bg-secondary/60 rounded-full animate-float" 
-                 style={{ animationDelay: '1s', animationDuration: '6s' }} />
-          </div>
-        </div>
+        <Button
+          variant="outline"
+          size="sm"
+          className="fixed bottom-6 right-6 z-50 h-12 px-4 rounded-full bg-background/80 backdrop-blur-md border-border/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+        >
+          <Settings className="w-4 h-4 mr-2 text-muted-foreground group-hover:text-primary group-hover:rotate-180 transition-all duration-500" />
+          <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300">
+            Settings
+          </span>
+        </Button>
       </PopoverTrigger>
       
       <PopoverContent 

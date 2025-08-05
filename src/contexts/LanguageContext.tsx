@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'en' | 'ar' | 'fr';
+export type Language = 'en' | 'fr';
 
 interface LanguageContextType {
   language: Language;
@@ -86,80 +86,6 @@ const translations = {
     'footer.copyright': '© 2024 Badr Moutaouakil. All rights reserved.',
   },
   
-  ar: {
-    // Navigation
-    'nav.home': 'الرئيسية',
-    'nav.about': 'نبذة عني',
-    'nav.skills': 'المهارات',
-    'nav.projects': 'المشاريع',
-    'nav.contact': 'التواصل',
-    'nav.resume': 'السيرة الذاتية',
-    'nav.portfolio': 'معرض أعمالي',
-    
-    // Hero Section
-    'hero.greeting': 'مرحباً، أنا',
-    'hero.name.first': 'بدر',
-    'hero.name.last': 'متوكل',
-    'hero.title': 'مطور ويب متكامل محترف',
-    'hero.description': 'شغوف بصناعة تجارب رقمية استثنائية باستخدام أحدث التقنيات. متخصص في Laravel و React و Spring Boot.',
-    'hero.cta.work': 'استكشف أعمالي',
-    'hero.cta.connect': 'دعنا نتواصل',
-    'hero.status': 'متاح للفرص الوظيفية',
-    'hero.scroll': 'اكتشف المزيد',
-    
-    // About Section
-    'about.title': 'نبذة عني',
-    'about.subtitle': 'اكتشف رحلتي وشغفي وتفاني في صناعة تجارب رقمية استثنائية.',
-    'about.age': 'العمر',
-    'about.location': 'الموقع',
-    'about.description1': 'أنا مطور ويب متكامل شغوف من المغرب، مدفوع بفضول لا يشبع للتكنولوجيا وإمكاناتها في حل المشاكل المعقدة. بدأت رحلتي بفضول بسيط لكنها تطورت إلى التزام عميق بصناعة تجارب رقمية استثنائية.',
-    'about.description2': 'ما يثيرني حقاً هو تقاطع الإبداع والمنطق - تحويل الأفكار المجردة إلى تطبيقات ملموسة ومؤثرة. أزدهر في التحديات التي تدفعني لتعلم تقنيات جديدة وتنفيذ حلول مبتكرة.',
-    'about.seeking': 'أبحث بنشاط عن دور مطور ويب متكامل مبتدئ حيث يمكنني المساهمة في مشاريع هادفة والتعاون مع فرق موهوبة ومواصلة نموي في بيئة ديناميكية.',
-    'about.education.title1': 'تقني متخصص في تطوير البرمجيات',
-    'about.education.school1': 'مدرسة أومنيا للأعمال والتكنولوجيا',
-    'about.education.desc1': 'برنامج مكثف لإتقان التطوير المتكامل وهندسة قواعد البيانات وممارسات هندسة البرمجيات الحديثة.',
-    'about.education.title2': 'دفاع مشروع البكالوريوس',
-    'about.education.status2': 'مكتمل بنجاح 2024-2025',
-    'about.education.desc2': 'إثبات إتقان التطوير المتكامل المتقدم من خلال عرض ودفاع شامل للمشروع.',
-    'about.education.title3': 'البكالوريا',
-    
-    // Skills Section
-    'skills.title': 'الخبرة التقنية',
-    'skills.subtitle': 'ترسانة شاملة من التقنيات والأدوات الحديثة التي أستخدمها لبناء تجارب رقمية استثنائية.',
-    'skills.frontend': 'تطوير الواجهة الأمامية',
-    'skills.backend': 'تطوير الخلفية',
-    'skills.database': 'إدارة قواعد البيانات',
-    'skills.tools': 'أدوات التطوير',
-    'skills.frameworks': 'الأطر والمكتبات',
-    'skills.architecture': 'أنماط الهندسة المعمارية',
-    'skills.languages': 'اللغات',
-    'skills.design': 'الحساسية التصميمية',
-    'skills.problem': 'حل المشاكل',
-    'skills.quality': 'جودة الكود',
-    
-    // Projects Section
-    'projects.title': 'المشاريع المميزة',
-    'projects.subtitle': 'عرض خبرتي من خلال تطبيقات العالم الحقيقي والحلول المبتكرة.',
-    'projects.view': 'عرض المشروع',
-    'projects.demo': 'عرض توضيحي مباشر',
-    
-    // Contact Section
-    'contact.title': 'دعنا ننشئ شيئاً مذهلاً معاً',
-    'contact.subtitle': 'مستعد لإحياء أفكارك؟ دعنا نناقش مشروعك ونستكشف كيف يمكننا العمل معاً.',
-    'contact.name': 'الاسم الكامل',
-    'contact.email': 'عنوان البريد الإلكتروني',
-    'contact.subject': 'الموضوع',
-    'contact.message': 'رسالتك',
-    'contact.send': 'إرسال الرسالة',
-    'contact.info.title': 'تواصل معي',
-    'contact.info.subtitle': 'لا تتردد في التواصل للتعاون أو مجرد تحية ودية!',
-    
-    // Footer
-    'footer.description': 'مطور ويب متكامل شغوف مكرس لإنشاء تجارب رقمية استثنائية.',
-    'footer.quicklinks': 'روابط سريعة',
-    'footer.social': 'تابعني',
-    'footer.copyright': '© 2024 بدر متوكل. جميع الحقوق محفوظة.',
-  },
   
   fr: {
     // Navigation
@@ -250,7 +176,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   useEffect(() => {
     localStorage.setItem('portfolio-language', language);
     document.documentElement.lang = language;
-    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = 'ltr';
   }, [language]);
 
   const t = (key: string): string => {
