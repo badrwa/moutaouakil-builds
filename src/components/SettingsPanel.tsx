@@ -46,32 +46,56 @@ const SettingsPanel = () => {
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className={`
-            fixed top-6 right-6 z-50 w-16 h-16 rounded-2xl shadow-elegant hover:shadow-glow 
-            bg-gradient-to-r from-card/80 via-card/60 to-card/80 backdrop-blur-xl 
-            border-0 hover:border-primary/30 transition-all duration-500
-            hover:scale-110 hover:rotate-12 group overflow-hidden
-            ${isAnimated ? 'animate-pulse' : ''}
-          `}
-        >
-          {/* Background Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="fixed top-6 right-6 z-50 group">
+          {/* Outer Ring with Rotating Border */}
+          <div className="absolute inset-0 w-14 h-14 rounded-full bg-gradient-to-r from-primary via-accent to-secondary animate-spin" 
+               style={{ animationDuration: '8s' }} />
           
-          {/* Floating Sparkles */}
-          <div className="absolute inset-0 overflow-hidden">
-            <Sparkles className="absolute top-1 right-1 w-3 h-3 text-primary/60 animate-bounce" style={{ animationDelay: '0s' }} />
-            <Sparkles className="absolute bottom-1 left-1 w-2 h-2 text-accent/60 animate-bounce" style={{ animationDelay: '1s' }} />
+          {/* Middle Ring */}
+          <div className="absolute inset-[2px] w-[calc(3.5rem-4px)] h-[calc(3.5rem-4px)] rounded-full bg-gradient-to-br from-background/95 to-card/90 backdrop-blur-xl" />
+          
+          {/* Inner Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`
+              relative w-12 h-12 rounded-full m-1
+              bg-gradient-to-br from-card/60 to-background/40 backdrop-blur-sm
+              border-0 shadow-lg hover:shadow-xl
+              transition-all duration-500 group-hover:scale-110
+              ${isAnimated ? 'animate-bounce' : ''}
+              overflow-hidden
+            `}
+          >
+            {/* Floating Orbs */}
+            <div className="absolute inset-0 overflow-hidden rounded-full">
+              <div className="absolute top-1 right-2 w-1.5 h-1.5 bg-primary/80 rounded-full animate-ping" 
+                   style={{ animationDelay: '0s', animationDuration: '3s' }} />
+              <div className="absolute bottom-2 left-1 w-1 h-1 bg-accent/80 rounded-full animate-ping" 
+                   style={{ animationDelay: '1.5s', animationDuration: '3s' }} />
+              <div className="absolute top-3 left-3 w-0.5 h-0.5 bg-secondary/80 rounded-full animate-ping" 
+                   style={{ animationDelay: '0.8s', animationDuration: '3s' }} />
+            </div>
+            
+            {/* Central Icon */}
+            <div className="relative z-10 flex items-center justify-center">
+              <Settings className="w-5 h-5 text-foreground group-hover:text-primary group-hover:rotate-90 transition-all duration-700" />
+            </div>
+            
+            {/* Inner Glow */}
+            <div className="absolute inset-0 rounded-full bg-gradient-radial from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </Button>
+          
+          {/* Floating Particles */}
+          <div className="absolute -inset-4 pointer-events-none">
+            <div className="absolute top-0 left-1/2 w-1 h-1 bg-primary/60 rounded-full animate-float" 
+                 style={{ animationDelay: '0s', animationDuration: '4s' }} />
+            <div className="absolute bottom-0 right-0 w-0.5 h-0.5 bg-accent/60 rounded-full animate-float" 
+                 style={{ animationDelay: '2s', animationDuration: '5s' }} />
+            <div className="absolute left-0 top-1/2 w-0.5 h-0.5 bg-secondary/60 rounded-full animate-float" 
+                 style={{ animationDelay: '1s', animationDuration: '6s' }} />
           </div>
-          
-          {/* Main Icon */}
-          <Settings className="w-7 h-7 relative z-10 group-hover:rotate-180 transition-transform duration-700 text-foreground group-hover:text-primary" />
-          
-          {/* Glow Effect */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/30 to-accent/30 blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500 scale-150" />
-        </Button>
+        </div>
       </PopoverTrigger>
       
       <PopoverContent 

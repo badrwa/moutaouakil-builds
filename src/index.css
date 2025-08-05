@@ -52,6 +52,7 @@
     --gradient-card: linear-gradient(145deg, hsl(210 11% 15%), hsl(215 15% 18%));
     --gradient-accent: linear-gradient(90deg, hsl(142 76% 36%), hsl(45 93% 47%));
     --gradient-border: linear-gradient(90deg, hsl(142 76% 36% / 0.3), hsl(45 93% 47% / 0.3));
+    --gradient-radial: radial-gradient(circle, var(--tw-gradient-from), var(--tw-gradient-to));
     
     /* Enhanced Shadows */
     --shadow-elegant: 0 25px 50px -12px hsl(142 76% 36% / 0.25);
