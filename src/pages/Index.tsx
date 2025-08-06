@@ -6,6 +6,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SettingsPanel from "@/components/SettingsPanel";
+import VersionInfo from "@/components/VersionInfo";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <VersionInfo />
     </div>
   );
 };
