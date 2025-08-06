@@ -17,7 +17,7 @@ const Skills = () => {
   
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: t('skills.frontend'),
       icon: <Code className="w-7 h-7" />,
       gradient: "from-blue-500 to-cyan-500",
       skills: [
@@ -33,7 +33,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Backend Development",
+      title: t('skills.backend'),
       icon: <Server className="w-7 h-7" />,
       gradient: "from-emerald-500 to-teal-500",
       skills: [
@@ -45,7 +45,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Database Management",
+      title: t('skills.database'),
       icon: <Database className="w-7 h-7" />,
       gradient: "from-purple-500 to-pink-500",
       skills: [
@@ -56,7 +56,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Development Tools",
+      title: t('skills.tools'),
       icon: <Settings className="w-7 h-7" />,
       gradient: "from-orange-500 to-red-500",
       skills: [
@@ -69,7 +69,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Frameworks & Libraries",
+      title: t('skills.frameworks'),
       icon: <Layers className="w-7 h-7" />,
       gradient: "from-violet-500 to-purple-500",
       skills: [
@@ -81,7 +81,7 @@ const Skills = () => {
       ],
     },
     {
-      title: "Architecture Patterns",
+      title: t('skills.architecture'),
       icon: <Terminal className="w-7 h-7" />,
       gradient: "from-indigo-500 to-blue-500",
       skills: [
@@ -182,7 +182,7 @@ const Skills = () => {
               <div className="mx-auto w-16 h-16 rounded-xl bg-gradient-accent flex items-center justify-center text-white mb-4 shadow-glow">
                 <Globe className="w-8 h-8" />
               </div>
-              <CardTitle className="text-3xl font-bold">Languages</CardTitle>
+              <CardTitle className="text-3xl font-bold">{t('skills.languages')}</CardTitle>
               <p className="text-muted-foreground">Communication across cultures</p>
             </CardHeader>
             <CardContent>
@@ -218,7 +218,7 @@ const Skills = () => {
             <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center text-white mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
               <Palette className="w-10 h-10" />
             </div>
-            <h3 className="font-bold text-xl mb-4 text-foreground">Design Sensibility</h3>
+            <h3 className="font-bold text-xl mb-4 text-foreground">{t('skills.design')}</h3>
             <p className="text-muted-foreground leading-relaxed">
               Strong understanding of UI/UX principles, modern design patterns, and user-centered thinking in development.
             </p>
@@ -228,7 +228,7 @@ const Skills = () => {
             <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-to-r from-indigo-500 to-blue-500 flex items-center justify-center text-white mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
               <Coffee className="w-10 h-10" />
             </div>
-            <h3 className="font-bold text-xl mb-4 text-foreground">Problem Solving</h3>
+            <h3 className="font-bold text-xl mb-4 text-foreground">{t('skills.problem')}</h3>
             <p className="text-muted-foreground leading-relaxed">
               Advanced analytical thinking, systematic debugging, and creative solution-finding for complex technical challenges.
             </p>
@@ -238,7 +238,7 @@ const Skills = () => {
             <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 flex items-center justify-center text-white mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
               <Terminal className="w-10 h-10" />
             </div>
-            <h3 className="font-bold text-xl mb-4 text-foreground">Code Quality</h3>
+            <h3 className="font-bold text-xl mb-4 text-foreground">{t('skills.quality')}</h3>
             <p className="text-muted-foreground leading-relaxed">
               Commitment to writing clean, maintainable, well-documented code following industry best practices and standards.
             </p>

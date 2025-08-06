@@ -20,8 +20,8 @@ const Projects = () => {
   const { t } = useLanguage();
   const projects = [
     {
-      title: "Institution Management System (MVP)",
-      description: "A comprehensive, role-based full-stack web application for managing educational institutions. Features dynamic dashboards for administrators, students, and instructors with complete user management capabilities.",
+      title: t('projects.institution.title'),
+      description: t('projects.institution.description'),
       images: [
         "/lovable-uploads/69397aa9-955f-484f-a07f-6f6f44171d8f.png", // Login
         "/lovable-uploads/34fd681a-1201-4195-a2cc-be2d16bb8792.png", // Admin Management
@@ -33,9 +33,9 @@ const Projects = () => {
       ],
       techStack: ["React", "Vite", "Bootstrap 5", "Spring Boot", "Spring Security", "JPA", "MySQL"],
       features: [
-        "Role-based authentication & authorization",
-        "Dynamic dashboards for each user role",
-        "Complete CRUD operations for all users",
+        t('projects.institution.feature1'),
+        t('projects.institution.feature2'),
+        t('projects.institution.feature3'),
         "Admin panel with user management table",
         "Student dashboard with GPA & attendance tracking",
         "Instructor panel for student management"

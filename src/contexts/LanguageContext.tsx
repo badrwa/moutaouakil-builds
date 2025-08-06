@@ -36,7 +36,7 @@ const translations = {
     'about.title': 'About Me',
     'about.subtitle': 'Discover my journey, passion, and dedication to crafting exceptional digital experiences.',
     'about.age': '25',
-    'about.location': 'Had Soualem, Morocco',
+    'about.location': 'Had Soualem, Morocco', 
     'about.phone': '+212 680 157 997',
     'about.email': 'b.moutawakil.at@gmail.com',
     'about.linkedin': 'linkedin.com/in/badr-moutaouakil-a2687b25b',
@@ -46,8 +46,8 @@ const translations = {
     'about.education.title1': "Bachelor's in Web and Mobile Application Engineering",
     'about.education.school1': 'OMNIA School of Business & Technology, Casablanca',
     'about.education.desc1': 'Project defense completed, diploma pending. Comprehensive program covering advanced full-stack development and mobile technologies.',
-    'about.education.title2': 'Specialized Technician Diploma in Software Development',
-    'about.education.status2': 'OMNIA School of Business & Technology, Casablanca',
+    'about.education.title2': 'Specialized Technician Diploma in Software Development', 
+    'about.education.status2': 'OMNIA School of Business & Technology, Casablanca (Completed)',
     'about.education.desc2': 'Intensive program mastering full-stack development, database architecture, and modern software engineering practices.',
     'about.education.title3': 'Baccalaureate in Science',
     'about.education.status3': 'Lycée Oulad Hriz Had Soualem (2020)',
@@ -59,6 +59,13 @@ const translations = {
     'skills.database.items': 'MySQL (phpMyAdmin)',
     'skills.tools.items': 'Git, GitHub, Postman, Swagger, Netlify, Spring Tool Suite',
     'skills.languages.items': 'Arabic (native), English (working proficiency)',
+    
+    // Projects
+    'projects.institution.title': 'Institution Management System (MVP)',
+    'projects.institution.description': 'A comprehensive, role-based full-stack web application for managing educational institutions. Features dynamic dashboards for administrators, students, and instructors with complete user management capabilities.',
+    'projects.institution.feature1': 'Role-based authentication & authorization',
+    'projects.institution.feature2': 'Dynamic dashboards for each user role',
+    'projects.institution.feature3': 'Complete CRUD operations for all users',
     
     // Version
     'version': 'v1.0.0 - 06/08/2025',
@@ -128,7 +135,7 @@ const translations = {
     'about.subtitle': 'Découvrez mon parcours, ma passion et mon dévouement à créer des expériences numériques exceptionnelles.',
     'about.age': '25',
     'about.location': 'Had Soualem, Maroc',
-    'about.phone': '+212 680 157 997',
+    'about.phone': '+212 680 157 997', 
     'about.email': 'b.moutawakil.at@gmail.com',
     'about.linkedin': 'linkedin.com/in/badr-moutaouakil-a2687b25b',
     'about.description1': 'Je suis un développeur full-stack passionné du Maroc, animé par une curiosité insatiable pour la technologie et son potentiel à résoudre des problèmes complexes. Mon voyage a commencé par une simple curiosité mais a évolué vers un engagement profond à créer des expériences numériques exceptionnelles.',
@@ -138,7 +145,7 @@ const translations = {
     'about.education.school1': 'École OMNIA Business & Technology, Casablanca',
     'about.education.desc1': 'Soutenance de projet complétée, diplôme en attente. Programme complet couvrant le développement full-stack avancé et les technologies mobiles.',
     'about.education.title2': 'Diplôme de Technicien Spécialisé en Développement de Logiciels',
-    'about.education.status2': 'École OMNIA Business & Technology, Casablanca',
+    'about.education.status2': 'École OMNIA Business & Technology, Casablanca (Complété)',
     'about.education.desc2': 'Programme intensif maîtrisant le développement full-stack, l\'architecture de base de données et les pratiques modernes d\'ingénierie logicielle.',
     'about.education.title3': 'Baccalauréat Sciences',
     'about.education.status3': 'Lycée Oulad Hriz Had Soualem (2020)',
@@ -146,10 +153,17 @@ const translations = {
     
     // Skills Section
     'skills.frontend.items': 'HTML, CSS, JavaScript, React + Vite, Bootstrap, PHP (Laravel Blade)',
-    'skills.backend.items': 'Laravel, Spring Boot, Node.js, Express, Java',
+    'skills.backend.items': 'Laravel, Spring Boot, Node.js, Express, Java', 
     'skills.database.items': 'MySQL (phpMyAdmin)',
     'skills.tools.items': 'Git, GitHub, Postman, Swagger, Netlify, Spring Tool Suite',
     'skills.languages.items': 'Arabe (natif), Anglais (compétence professionnelle)',
+    
+    // Projects
+    'projects.institution.title': 'Système de Gestion d\'Institution (MVP)',
+    'projects.institution.description': 'Une application web full-stack complète basée sur les rôles pour gérer les institutions éducatives. Propose des tableaux de bord dynamiques pour les administrateurs, étudiants et instructeurs avec des capacités complètes de gestion des utilisateurs.',
+    'projects.institution.feature1': 'Authentification et autorisation basées sur les rôles',
+    'projects.institution.feature2': 'Tableaux de bord dynamiques pour chaque rôle d\'utilisateur',
+    'projects.institution.feature3': 'Opérations CRUD complètes pour tous les utilisateurs',
     
     // Version
     'version': 'v1.0.0 - 06/08/2025',

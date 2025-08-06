@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, MapPin, User, Target, Star, Heart, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import QRResumeCard from "./QRResumeCard";
 
 const About = () => {
   const { t } = useLanguage();
@@ -32,8 +33,8 @@ const About = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Calendar className="w-6 h-6 text-primary" />
                   </div>
-                   <h3 className="font-semibold text-foreground mb-2">{t('about.age')}</h3>
-                  <p className="text-muted-foreground text-lg">24 Years</p>
+                   <h3 className="font-semibold text-foreground mb-2">Age</h3>
+                  <p className="text-muted-foreground text-lg">{t('about.age')} Years</p>
                 </CardContent>
               </Card>
               <Card className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105">
@@ -41,8 +42,8 @@ const About = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-accent/20 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
-                   <h3 className="font-semibold text-foreground mb-2">{t('about.location')}</h3>
-                  <p className="text-muted-foreground text-lg">Had Soualem, Morocco</p>
+                   <h3 className="font-semibold text-foreground mb-2">Location</h3>
+                  <p className="text-muted-foreground text-lg">{t('about.location')}</p>
                 </CardContent>
               </Card>
             </div>
@@ -71,11 +72,11 @@ const About = () => {
                     <GraduationCap className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-xl mb-3 text-foreground">Technician Spécialisé in Software Development</h3>
-                    <p className="text-primary font-semibold text-lg">OMNIA School of Business & Technology</p>
-                    <p className="text-muted-foreground mb-3">2022 – 2024 • Casablanca</p>
+                    <h3 className="font-bold text-xl mb-3 text-foreground">{t('about.education.title2')}</h3>
+                    <p className="text-primary font-semibold text-lg">{t('about.education.school1')}</p>
+                    <p className="text-muted-foreground mb-3">{t('about.education.status2')}</p>
                     <p className="text-muted-foreground leading-relaxed">
-                      Intensive program mastering full-stack development, database architecture, and modern software engineering practices.
+                      {t('about.education.desc2')}
                     </p>
                   </div>
                 </div>
@@ -89,11 +90,11 @@ const About = () => {
                     <Target className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-xl mb-3 text-foreground">Bachelor Project Defense</h3>
-                    <p className="text-accent font-semibold text-lg">Successfully Completed 2024-2025</p>
-                    <p className="text-muted-foreground mb-3">Diploma Pending</p>
+                    <h3 className="font-bold text-xl mb-3 text-foreground">{t('about.education.title1')}</h3>
+                    <p className="text-accent font-semibold text-lg">{t('about.education.school1')}</p>
+                    <p className="text-muted-foreground mb-3">{t('about.education.desc1')}</p>
                     <p className="text-muted-foreground leading-relaxed">
-                      Demonstrated mastery of advanced full-stack development through comprehensive project presentation and defense.
+                      Project defense completed, diploma pending.
                     </p>
                   </div>
                 </div>
@@ -107,13 +108,16 @@ const About = () => {
                     <GraduationCap className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-xl mb-3 text-foreground">Baccalaureate</h3>
-                    <p className="text-muted-foreground text-lg">Lycée Oulad Hriz Had Soualem</p>
-                    <p className="text-muted-foreground">2020</p>
+                    <h3 className="font-bold text-xl mb-3 text-foreground">{t('about.education.title3')}</h3>
+                    <p className="text-muted-foreground text-lg">{t('about.education.status3')}</p>
+                    <p className="text-muted-foreground">{t('about.education.desc3')}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
+            {/* QR Code Resume */}
+            <QRResumeCard />
           </div>
         </div>
       </div>
