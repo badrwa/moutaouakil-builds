@@ -105,7 +105,7 @@ const translations = {
     'footer.description': 'Passionate full-stack developer dedicated to creating exceptional digital experiences.',
     'footer.quicklinks': 'Quick Links',
     'footer.social': 'Follow Me',
-    'footer.copyright': '© 2024 Badr Moutaouakil. All rights reserved.',
+    'footer.copyright': '© 2025 Badr Moutaouakil. All rights reserved.',
   },
   
   
