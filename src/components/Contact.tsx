@@ -41,14 +41,22 @@ const Contact = () => {
         throw error;
       }
 
-      // Send email notification
+      // Send WhatsApp notification
       try {
-        await supabase.functions.invoke('send-contact-notification', {
+        console.log('Attempting to send WhatsApp notification...', submission);
+        const { data, error } = await supabase.functions.invoke('send-contact-notification', {
           body: submission
         });
-      } catch (emailError) {
-        console.error('Email notification failed:', emailError);
-        // Don't fail the whole submission if email fails
+        
+        if (error) {
+          console.error('WhatsApp notification error:', error);
+          throw error;
+        }
+        
+        console.log('WhatsApp notification sent successfully:', data);
+      } catch (notificationError) {
+        console.error('WhatsApp notification failed:', notificationError);
+        // Don't fail the whole submission if notification fails
       }
 
       toast({
