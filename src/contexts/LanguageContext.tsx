@@ -68,7 +68,7 @@ const translations = {
     'projects.institution.feature3': 'Complete CRUD operations for all users',
     
     // Version
-    'version': 'v1.0.0 - 06/08/2025',
+    'version': 'v1.1.0 - 01/09/2025',
     
     // Skills Section
     'skills.title': 'Technical Expertise',
@@ -166,7 +166,7 @@ const translations = {
     'projects.institution.feature3': 'Opérations CRUD complètes pour tous les utilisateurs',
     
     // Version
-    'version': 'v1.0.0 - 06/08/2025',
+    'version': 'v1.1.0 - 01/09/2025',
     
     // Skills Section
     'skills.title': 'Expertise Technique',
